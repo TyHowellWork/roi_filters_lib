@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(roi_filters_lib)
+project(roi_filters)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -20,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
     # 3rd modules for ROS, like Eigen
     cmake_modules
     # local packages
-    common_lib
+    common
 )
 
 ## System dependencies are found with CMake's conventions
@@ -46,7 +46,7 @@ catkin_package(
     #  CATKIN_DEPENDS roscpp
     #  DEPENDS system_lib
     INCLUDE_DIRS include
-    LIBRARIES roi_filters_lib
+    LIBRARIES roi_filters
 )
 
 
@@ -80,4 +80,11 @@ target_link_libraries(${PROJECT_NAME}
 ## Install ##
 #############
 
-# ...
+install(TARGETS ${PROJECT_NAME}
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION})
+
+install(DIRECTORY include/${PROJECT_NAME}/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+

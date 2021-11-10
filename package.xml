@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>roi_filters_lib</name>
+  <name>roi_filters</name>
   <version>0.0.0</version>
   <description>The Point Cloud roi process library.</description>
 
@@ -33,7 +33,7 @@
   <!-- Examples: -->
   <!-- Use depend as a shortcut for packages that are both build and exec dependencies -->
   <!--   <depend>roscpp</depend> -->
-  <build_depend>common_lib</build_depend>
+  <build_depend>common</build_depend>
   <!--   Note that this is equivalent to the following: -->
   <!--   <build_depend>roscpp</build_depend> -->
   <!--   <exec_depend>roscpp</exec_depend> -->
